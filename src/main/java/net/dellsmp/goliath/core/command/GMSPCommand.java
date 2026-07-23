@@ -6,10 +6,19 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
+import java.util.List;
+
 public class GMSPCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
         if(!(sender instanceof Player player)) return true;
+        if(!player.hasPermission(""))
+        return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args){
+        return List.of();
     }
 }
