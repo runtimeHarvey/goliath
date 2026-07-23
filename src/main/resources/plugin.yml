@@ -1,0 +1,6 @@
+name: goliath
+version: '${version}'
+
+main: net.dellsmp.goliath.Goliath
+api-version: '26.1.2'
+load: POSTWORLD
