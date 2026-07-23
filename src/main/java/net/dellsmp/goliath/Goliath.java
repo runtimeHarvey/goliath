@@ -12,5 +12,5 @@ public final class Goliath extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-    }
+    } // test
 }
