@@ -10,6 +10,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PlusRank implements CommandExecutor, TabCompleter {
@@ -33,9 +34,13 @@ public class PlusRank implements CommandExecutor, TabCompleter {
         String input = args[0].toLowerCase();
 
         for(OfflinePlayer p : Bukkit.getOfflinePlayers()){
-            
-        }
+            String name = p.getName();
 
+            if(name != null && name.toLowerCase().startsWith(input)){
+                playerNames.add(name);
+            }
+        }
+        Collections.sort(playerNames);
         return playerNames;
     }
 }
