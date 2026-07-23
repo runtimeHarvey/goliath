@@ -17,5 +17,6 @@ public final class Goliath extends JavaPlugin {
     }
 
     public static Goliath getInstance() {
-    return instance;
-}}
+        return instance;
+    }
+}

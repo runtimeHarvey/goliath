@@ -1,6 +1,7 @@
 package net.dellsmp.goliath.core.command;
 
 import net.dellsmp.goliath.Goliath;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,7 +22,14 @@ public class GMSPCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
         if(!(sender instanceof Player player)) return true;
         if(!player.hasPermission("swedo.gmsp")) return true;
-        if()
+        player.getScheduler().runDelayed(plugin, task -> {
+            if(player.getGameMode().equals(GameMode.SPECTATOR)){
+                player.setGameMode(GameMode.SURVIVAL);
+                return;
+            } else {
+                player.setGameMode(GameMode.SPECTATOR);
+            }
+        }, null, 5L);
         return true;
     }
 
